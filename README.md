@@ -28,7 +28,8 @@ Where severity is "error", "warn" or "off". You can omit "off" values.
 
 <details>
 <summary>side-effect</summary>
-## side-effect
+  
+# side-effect
 
 The void operator can be abused to write expressions that are nothing more than `undefined` with extra steps.
 
@@ -110,7 +111,8 @@ void { ...object }; // ownKeys
 
 <details>
 <summary>arrow-body</summary>
-## arrow-body
+  
+# arrow-body
 
 The void operator can be used to stop arrow functions leaking return values.
 
