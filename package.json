@@ -1,0 +1,23 @@
+{
+  "name": "eslint-plugin-void",
+  "version": "1.0.0",
+  "description": "Eslint plugin to lint use of the void operator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chamion/eslint-plugin-void.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-plugin"
+  ],
+  "author": "Jemi S. Salo <jemi.salo@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Chamion/eslint-plugin-void/issues"
+  },
+  "homepage": "https://github.com/Chamion/eslint-plugin-void#readme"
+}
