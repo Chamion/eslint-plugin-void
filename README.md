@@ -268,4 +268,4 @@ rules: {
 ## When not to use this plugin
 
 If you never want to use the void operator, use [no-void](https://eslint.org/docs/rules/no-void) instead.
-Even though this plugin offers fixes that `no-void` does not, the rules conflict so use of both is discouraged.
+Even though this plugin offers fixes that `no-void` does not, the rules in this plugin conflict with `no-void` so use of both is discouraged.
