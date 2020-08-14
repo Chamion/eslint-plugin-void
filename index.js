@@ -37,19 +37,18 @@ const createSideEffect = (context) => {
       case 'ConditionalExpression':
         return hasSideEffect(node.consequent) || hasSideEffect(node.alternative);
       case 'ObjectExpression':
-        return node.properties.some(property => (
+        return node.properties.some(property => 
           property.type === 'Property'
-          && (
-            hasSideEffect(property.value)
-            || hasSideEffect(property.key)
-          )
-        ) || (
-          property.type === 'ExperimentalSpreadProperty'
-          && (
-            allowTraps.ownKeys ||
-            hasSideEffect(property.argument)
-          )
-        ));
+            ? (
+              hasSideEffect(property.value)
+              || hasSideEffect(property.key)
+            )
+            : (
+              // TODO: define exact type name(s) of spread operator
+              allowTraps.ownKeys ||
+              (!!property.argument && hasSideEffect(property.argument))
+            )
+        );
       case 'TemplateLiteral':
         return node.expressions.some(hasSideEffect);
       case 'TaggedTemplateExpression':
