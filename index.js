@@ -93,8 +93,9 @@ const createArrowBody = (context) => {
       (scope === 'single' && block.body.length > 1) ||
       (scope === 'multi' && block.body.length === 1) ||
       !block.body.every(
-        expressionStatement.type === 'ExpressionStatement' &&
-        SIMPLE_SIDE_EFFECT_EXPRESSIONS.includes(expressionStatement.expression.type)
+        expressionStatement =>
+          expressionStatement.type === 'ExpressionStatement' &&
+          SIMPLE_SIDE_EFFECT_EXPRESSIONS.includes(expressionStatement.expression.type)
       )
     ) return;
     const fix = fixer => {
