@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-void",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Eslint plugin to lint use of the void operator",
   "main": "index.js",
   "scripts": {
