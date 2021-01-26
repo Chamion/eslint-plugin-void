@@ -108,10 +108,11 @@ const createArrowBody = (context) => {
       const replacement = `void ${expressionsReplacement}`;
       return fixer.replaceText(block, replacement);
     };
+    const hasComments = context.getSourceCode().getCommentsInside(block).length > 0;
     context.report({
       node: block,
       message: 'Unexpected function body. Use void instead.',
-      fix,
+      fix: hasComments ? null : fix,
       suggest: [{
         desc: "Replace with void expression.",
         fix
@@ -142,10 +143,11 @@ const createArrowBody = (context) => {
       const replacement = `{${expressionsReplacement};}`;
       return fixer.replaceText(voidExpression, replacement);
     };
+    const hasComments = context.getSourceCode().getCommentsInside(voidExpression).length > 0;
     context.report({
       node: voidExpression,
       message: 'Unexpected void operator. Use function body instead.',
-      fix,
+      fix: hasComments ? null : fix,
       suggest: [{
         desc: 'Replace with function body.',
         fix
